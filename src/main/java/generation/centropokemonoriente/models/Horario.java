@@ -1,7 +1,10 @@
 package generation.centropokemonoriente.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
@@ -14,6 +17,11 @@ public class Horario {
     private LocalTime horaInicio;
 
     private LocalTime horaFin;
+
+    @CreationTimestamp
+    private LocalDateTime createdAt;
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
 
     @ManyToOne
     @JoinColumn(name = "doctor_id", nullable = false)
