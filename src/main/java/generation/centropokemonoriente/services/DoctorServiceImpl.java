@@ -17,7 +17,8 @@ public class DoctorServiceImpl implements DoctorService {
     private DoctorRepository doctorRepository;
 
     @Override
-    public Doctor findBy(Long id) {
+    //
+    public Doctor findById(Long id) {
         return null;
     }
 }
