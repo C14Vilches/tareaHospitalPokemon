@@ -1,6 +1,5 @@
 package generation.centropokemonoriente.models;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.persistence.*;
 import lombok.*;
 

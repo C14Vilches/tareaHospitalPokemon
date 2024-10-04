@@ -1,6 +1,8 @@
 package generation.centropokemonoriente.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -11,11 +13,16 @@ import java.time.LocalTime;
 @Table (name= "horarios")
 public class Horario {
 
+    @Getter
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Setter
+    @Getter
     private LocalTime horaInicio;
 
+    @Setter
+    @Getter
     private LocalTime horaFin;
 
     @CreationTimestamp
@@ -36,23 +43,4 @@ public class Horario {
         this.horaFin = horaFin;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public LocalTime getHoraInicio() {
-        return horaInicio;
-    }
-
-    public void setHoraInicio(LocalTime horaInicio) {
-        this.horaInicio = horaInicio;
-    }
-
-    public LocalTime getHoraFin() {
-        return horaFin;
-    }
-
-    public void setHoraFin(LocalTime horaFin) {
-        this.horaFin = horaFin;
-    }
 }

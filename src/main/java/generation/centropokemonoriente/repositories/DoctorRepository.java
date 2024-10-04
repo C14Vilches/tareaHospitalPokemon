@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface DoctorRepository extends JpaRepository<Doctor, Long> {
     //clase Jpa Repository contiene metodos para hacer CRUD
     //repositorios son inferfaces porque solo definen metodos, no definen atributos
-
+    //
 }

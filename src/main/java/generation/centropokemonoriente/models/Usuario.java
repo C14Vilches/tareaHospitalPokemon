@@ -1,5 +1,6 @@
 package generation.centropokemonoriente.models;
 import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -7,10 +8,21 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table (name = "usuarios")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+//faltan mas ennutiations
 public class Usuario {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    private String nombre;
+
+    private String apellido;
 
             //restriscciones para la columna
     @Column(nullable = false, unique = true)
@@ -39,15 +51,6 @@ public class Usuario {
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     private Paciente paciente;
 
-    /********************************************/
+    /*  -   -   -   -   -   -   -   -   -   -   -*/
 
-    public Usuario() {
-
-    }
-
-    public Usuario(String email, String password, TipoUsuario USUARIO) {
-        this.email = email;
-        this.password = password;
-        this.tipoUsuario = tipoUsuario;
-    }
 }

@@ -1,10 +1,16 @@
 package generation.centropokemonoriente.models;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 //anotacion para que JPA sepa que tablas vamos a usar, objetos, etc
 @Entity
 @Table(name="pacientes")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 
 public class Paciente{
     //primary key
@@ -17,44 +23,8 @@ public class Paciente{
     private String nombre;
     @Column(name = "apellido_paciente")
     private String apellido;
-    public Paciente (){
-    }
-
-    /*El orden sería:
-    declaración de atributos
-    constructor vacío
-    constructor lleno
-    getter id
-    getters and setters para el resto de los atributos
-    toString con todos los atributos*/
-
-    public Paciente(int id, String nombre, String apellido) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
 
     //sobreescribe funcionamiento del metodo
-
-    @Override
-    public String toString() {
-        return "Paciente{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                '}';
-    }
 
     /*******ESPACIO PARA OTROS ATRIBUTOS*********/
 
@@ -64,6 +34,5 @@ public class Paciente{
     @JoinColumn (name = "usuario_id")
     private Usuario usuario;
 
-    /********************************************/
-
+    /*  -   -   -   -   -   -   -   -   -   -   -*/
 }
