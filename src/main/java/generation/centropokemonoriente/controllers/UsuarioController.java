@@ -35,4 +35,9 @@ public class UsuarioController {
         usuarioService.saveusuario(usuarioNuevo);
         return "redirect:/usuario/menu";
     }
+
+    //redirigir al usuario adecuado
+//    if (usuarioNuevo.getTipoUsuario() == TipoUsuario.DOCTOR){
+//        return "redirect:/doctor/crear?usuarioid=" + usuarioNuevo
+//    }
 }

@@ -1,6 +1,7 @@
 package generation.centropokemonoriente.models;
 
 import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -9,6 +10,12 @@ import java.util.List;
 
 @Entity
 @Table(name = "doctores")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+
 public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,10 +49,6 @@ public class Doctor {
     private List<Especialidad> especialidades;
 
     /********************************************/
-
-    public Doctor() {
-
-    }
 
     public Doctor(String especialidad, Boolean atencionOnline) {
         this.especialidad = especialidad;
